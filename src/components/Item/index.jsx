@@ -12,9 +12,7 @@ export default class Item extends Component {
   }
   handleChecked = (id) => {
     return (event) => {
-      console.log('====================================');
-      console.log(id, event.target.checked);
-      console.log('====================================');
+      this.props.updateTodo(id,event.target.checked);
     }
   }
   render() {

@@ -19,16 +19,16 @@ class App extends Component {
   }
   //用于添加一个todo
   addTodo = (todoObj) => {
-    const {todos} = this.state;
-    const newTodos = [todoObj,...todos];
-    this.setState({todos:newTodos});
+    const { todos } = this.state;
+    const newTodos = [todoObj, ...todos];
+    this.setState({ todos: newTodos });
   }
 
   //更新一个todo对象
-  updateTodo = (id, done)=>{
-    const {todos} = this.state;
-    const newTodos = todos.map((obj)=>{
-      if(obj.id === id) return {...obj,done};
+  updateTodo = (id, done) => {
+    const { todos } = this.state;
+    const newTodos = todos.map((obj) => {
+      if (obj.id === id) return { ...obj, done };
       else return obj;
     });
     this.setState(newTodos);
@@ -40,7 +40,7 @@ class App extends Component {
         <div className="todo-container">
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
-            <List todos={this.state.todos} />
+            <List todos={this.state.todos} updateTodo={this.updateTodo} />
             <Footer />
           </div>
         </div>
