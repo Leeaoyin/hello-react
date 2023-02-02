@@ -1,14 +1,32 @@
 import React, { Component } from 'react'
 
 export default class Item extends Component {
+
+  state = {
+    mouse: false,
+  }
+  handleMouse = (flag) => {
+    return () => {
+      this.setState({ mouse: flag })
+    }
+  }
+  handleChecked = (id) => {
+    return (event)=>{
+      console.log('====================================');
+    console.log(id,event.target.checked);
+    console.log('====================================');
+    }
+  }
   render() {
+    const { id, name, done } = this.props;
+    const {mouse} = this.state;
     return (
-      <li>
+      <li style={{ backgroundColor: mouse ? '#4e90f5' : 'white',color: mouse ? 'white':'black' }} onMouseLeave={this.handleMouse(false)} onMouseEnter={this.handleMouse(true)} >
         <label>
-          <input type="checkbox" />
-          <span>xxxxx</span>
+          <input type="checkbox" defaultChecked={done ? true : false} onChange={this.handleChecked(id)}/>
+          <span>{name}</span>
         </label>
-        <button className="btn btn-danger" style={{ display: 'none' }}>删除</button>
+        <button className="btn btn-danger" style={{ display: mouse?'block':'none' }}>删除</button>
       </li>
     )
   }
