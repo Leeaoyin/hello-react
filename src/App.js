@@ -7,6 +7,8 @@ import React, { Component } from 'react'
 
 class App extends Component {
 
+
+  //注意：状态在哪，操作状态的方法就在哪
   state = {
     todos: [
       { id: '001', name: '吃饭', done: true },
@@ -22,6 +24,7 @@ class App extends Component {
     this.setState({todos:newTodos});
   }
 
+  //更新一个todo对象
   updateTodo = (id, done)=>{
     const {todos} = this.state;
     const newTodos = todos.map((obj)=>{
