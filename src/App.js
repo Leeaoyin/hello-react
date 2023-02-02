@@ -22,6 +22,15 @@ class App extends Component {
     this.setState({todos:newTodos});
   }
 
+  updateTodo = (id, done)=>{
+    const {todos} = this.state;
+    const newTodos = todos.map((obj)=>{
+      if(obj.id === id) return {...obj,done};
+      else return obj;
+    });
+    this.setState(newTodos);
+  }
+
   render() {
     return (
       <div className="App">
