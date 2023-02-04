@@ -34,13 +34,24 @@ class App extends Component {
     this.setState(newTodos);
   }
 
+  //删除一个todo对象
+  deleteTodo = (id) => {
+    const { todos } = this.state;
+    const newTodos = todos.filter((todoObj) => {
+      return todoObj.id !== id;
+    });
+    // console.log('删除后的todos',newTodos);
+    this.setState({todos:newTodos});
+    
+  }
+
   render() {
     return (
       <div className="App">
         <div className="todo-container">
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
-            <List todos={this.state.todos} updateTodo={this.updateTodo} />
+            <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
             <Footer />
           </div>
         </div>
