@@ -11,7 +11,7 @@ class App extends Component {
   //注意：状态在哪，操作状态的方法就在哪
   state = {
     todos: [
-      { id: '001', name: '吃饭', done: true },
+      { id: '001', name: '吃饭', done: false },
       { id: '002', name: '写作业', done: false },
       { id: '003', name: '玩', done: false },
       { id: '004', name: '洗衣', done: false },
@@ -45,6 +45,22 @@ class App extends Component {
     
   }
 
+  //全选
+  checkedAll = (done)=>{
+    const {todos} = this.state;
+    const newTodos = todos.map((todoObj)=>{
+      return {...todoObj,done:done}
+    });
+    this.setState({todos:newTodos});
+  }
+
+  //清除所有已经完成的
+  clearAllDone = ()=>{
+    const {todos} = this.state;
+    const newTodos = todos.filter((todoObj)=>{return todoObj.done === false});
+    this.setState({todos:newTodos});
+  }
+
   render() {
     return (
       <div className="App">
@@ -52,7 +68,7 @@ class App extends Component {
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
             <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
-            <Footer todos={this.state.todos} />
+            <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone}/>
           </div>
         </div>
       </div>
