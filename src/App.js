@@ -28,10 +28,10 @@ class App extends Component {
   updateTodo = (id, done) => {
     const { todos } = this.state;
     const newTodos = todos.map((obj) => {
-      if (obj.id === id) return { ...obj, done };
+      if (obj.id === id) return { ...obj, done:done };
       else return obj;
     });
-    this.setState(newTodos);
+    this.setState({todos:newTodos});
   }
 
   //删除一个todo对象
@@ -52,7 +52,7 @@ class App extends Component {
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
             <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
-            <Footer />
+            <Footer todos={this.state.todos} />
           </div>
         </div>
       </div>
