@@ -17,10 +17,10 @@ export default class Item extends Component {
   }
   handleDelete = (id) => {
     const isDel = window.confirm('确定删除吗?');
-    if(isDel){
+    if (isDel) {
       this.props.deleteTodo(id);
     }
-    
+
   }
   render() {
     const { id, name, done } = this.props;

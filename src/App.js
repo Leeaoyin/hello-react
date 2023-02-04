@@ -28,10 +28,10 @@ class App extends Component {
   updateTodo = (id, done) => {
     const { todos } = this.state;
     const newTodos = todos.map((obj) => {
-      if (obj.id === id) return { ...obj, done:done };
+      if (obj.id === id) return { ...obj, done: done };
       else return obj;
     });
-    this.setState({todos:newTodos});
+    this.setState({ todos: newTodos });
   }
 
   //删除一个todo对象
@@ -41,24 +41,24 @@ class App extends Component {
       return todoObj.id !== id;
     });
     // console.log('删除后的todos',newTodos);
-    this.setState({todos:newTodos});
-    
+    this.setState({ todos: newTodos });
+
   }
 
   //全选
-  checkedAll = (done)=>{
-    const {todos} = this.state;
-    const newTodos = todos.map((todoObj)=>{
-      return {...todoObj,done:done}
+  checkedAll = (done) => {
+    const { todos } = this.state;
+    const newTodos = todos.map((todoObj) => {
+      return { ...todoObj, done: done }
     });
-    this.setState({todos:newTodos});
+    this.setState({ todos: newTodos });
   }
 
   //清除所有已经完成的
-  clearAllDone = ()=>{
-    const {todos} = this.state;
-    const newTodos = todos.filter((todoObj)=>{return todoObj.done === false});
-    this.setState({todos:newTodos});
+  clearAllDone = () => {
+    const { todos } = this.state;
+    const newTodos = todos.filter((todoObj) => { return todoObj.done === false });
+    this.setState({ todos: newTodos });
   }
 
   render() {
@@ -67,8 +67,8 @@ class App extends Component {
         <div className="todo-container">
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
-            <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
-            <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone}/>
+            <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
+            <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone} />
           </div>
         </div>
       </div>
