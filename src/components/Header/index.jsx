@@ -7,7 +7,7 @@ export default class Header extends Component {
         const value = event.target.value;
         if (event.keyCode !== 13) return
         if (event.target.value.trim() === '') {
-            message.warning('请输入');
+            message.error('无效输入');
             return;
         } else {
             message.success('添加完成');
