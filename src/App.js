@@ -64,6 +64,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* todolist begin */}
         <div className="todo-container">
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
@@ -71,6 +72,7 @@ class App extends Component {
             <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone} />
           </div>
         </div>
+        {/* todolist end */}
       </div>
     )
   }
