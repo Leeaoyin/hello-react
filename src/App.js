@@ -65,14 +65,34 @@ class App extends Component {
     return (
       <div className="App">
         {/* todolist begin */}
-        <div className="todo-container">
+        {/* <div className="todo-container">
           <div className="todo-wrap">
             <Header addTodo={this.addTodo} />
             <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
             <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone} />
           </div>
-        </div>
+        </div> */}
         {/* todolist end */}
+        <div chassName="row">
+      <div chassName="col-xs-offset-2 col-xs-8">
+        <div chassName="page-header"><h2>React Router Demo</h2></div>
+      </div>
+    </div>
+    <div chassName="row">
+      <div chassName="col-xs-2 col-xs-offset-2">
+        <div chassName="list-group">
+          <a chassName="list-group-item active" href="./about.html">About</a>
+          <a chassName="list-group-item" href="./home.html">Home</a>
+        </div>
+      </div>
+      <div chassName="col-xs-6">
+        <div chassName="panel">
+          <div chassName="panel-body">
+            <h3>我是About的内容</h3>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     )
   }
