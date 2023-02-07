@@ -22,8 +22,8 @@ export default class RouPapp extends Component {
               {/* 在react中靠路由实现组件切换功能 */}
               {/* 不同的BrowserRouter不能相互通信，比如这里写了两个BrowserRouter就不能实现效果，要把所有元素包含在一个BrowserRouter中 */}
               {/* <BrowserRouter> */}
-              <MyNavLink to="/about" name="About"/>
-              <MyNavLink  to="/home" name="Home"/>
+              <MyNavLink to="/about" name="About">About</MyNavLink>
+              <MyNavLink  to="/home" name="Home">Home</MyNavLink>
               {/* </BrowserRouter> */}
 
             </div>
