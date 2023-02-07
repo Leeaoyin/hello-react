@@ -1,9 +1,10 @@
 
 import './App.css';
+import React, { Component } from 'react'
 import Header from './components/Header';
 import List from './components/List';
-import Footer from './components/Footer'
-import React, { Component } from 'react'
+import Footer from './components/Footer';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
 
@@ -73,26 +74,33 @@ class App extends Component {
           </div>
         </div> */}
         {/* todolist end */}
-        <div chassName="row">
-      <div chassName="col-xs-offset-2 col-xs-8">
-        <div chassName="page-header"><h2>React Router Demo</h2></div>
-      </div>
-    </div>
-    <div chassName="row">
-      <div chassName="col-xs-2 col-xs-offset-2">
-        <div chassName="list-group">
-          <a chassName="list-group-item active" href="./about.html">About</a>
-          <a chassName="list-group-item" href="./home.html">Home</a>
-        </div>
-      </div>
-      <div chassName="col-xs-6">
-        <div chassName="panel">
-          <div chassName="panel-body">
-            <h3>我是About的内容</h3>
+        <div className="row">
+          <div className="col-xs-offset-2 col-xs-8">
+            <div className="page-header"><h2>React Router Demo</h2></div>
           </div>
         </div>
-      </div>
-    </div>
+        <div className="row">
+          <div className="col-xs-2 col-xs-offset-2">
+            <div className="list-group">
+              {/* <a className="list-group-item active" href="./about.html">About</a>
+          <a className="list-group-item" href="./home.html">Home</a> */}
+
+              {/* 在react中靠路由实现组件切换功能 */}
+              <BrowserRouter>
+                <Link className="list-group-item" to="/about">About</Link>
+                <Link className="list-group-item" to="/home">Home</Link>
+              </BrowserRouter>
+
+            </div>
+          </div>
+          <div className="col-xs-6">
+            <div className="panel">
+              <div className="panel-body">
+                <h3>????</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
