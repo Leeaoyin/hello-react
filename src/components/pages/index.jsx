@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink,  Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import MyNavLink from './MyNavLink'
@@ -23,7 +23,7 @@ export default class RouPapp extends Component {
               {/* 不同的BrowserRouter不能相互通信，比如这里写了两个BrowserRouter就不能实现效果，要把所有元素包含在一个BrowserRouter中 */}
               {/* <BrowserRouter> */}
               <MyNavLink to="/about" name="About">About</MyNavLink>
-              <MyNavLink  to="/home" name="Home">Home</MyNavLink>
+              <MyNavLink to="/home" name="Home">Home</MyNavLink>
               {/* </BrowserRouter> */}
 
             </div>
