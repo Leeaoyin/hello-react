@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Header from './components/Header';
 import List from './components/List';
 import Footer from './components/Footer';
-import RouPapp from './components/Router_practice';
+import RouPapp from './components/pages';
 
 
 
