@@ -1,10 +1,13 @@
-
 import './App.css';
 import React, { Component } from 'react'
 import Header from './components/Header';
 import List from './components/List';
 import Footer from './components/Footer';
-import { Link, BrowserRouter } from 'react-router-dom';
+
+
+import { Link, BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Router_practice/Home';
+import About from './components/Router_practice/About';
 
 class App extends Component {
 
@@ -86,17 +89,22 @@ class App extends Component {
           <a className="list-group-item" href="./home.html">Home</a> */}
 
               {/* 在react中靠路由实现组件切换功能 */}
-              <BrowserRouter>
+              {/* 不同的BrowserRouter不能相互通信，比如这里写了两个BrowserRouter就不能实现效果，要把所有元素包含在一个BrowserRouter中 */}
+              {/* <BrowserRouter> */}
                 <Link className="list-group-item" to="/about">About</Link>
                 <Link className="list-group-item" to="/home">Home</Link>
-              </BrowserRouter>
+              {/* </BrowserRouter> */}
 
             </div>
           </div>
           <div className="col-xs-6">
             <div className="panel">
               <div className="panel-body">
-                <h3>????</h3>
+                {/* 注册路由 */}
+                {/* <BrowserRouter> */}
+                  <Route path="/about" component={About} />
+                  <Route path="/home" component={Home} />
+                {/* </BrowserRouter> */}
               </div>
             </div>
           </div>
