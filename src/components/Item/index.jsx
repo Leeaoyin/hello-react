@@ -37,7 +37,6 @@ export default class Item extends Component {
           <input type="checkbox" checked={done ? true : false} onChange={this.handleChecked(id)} />
           <span>{name}</span>
         </label>
-        {/* <button onClick={() => { this.handleDelete(id) }} className="btn btn-danger" style={{ display: mouse ? 'block' : 'none' }}>删除</button> */}
         <div style={{ display: mouse ? 'block' : 'none', textAlign: 'right' }}>
           <Popconfirm
             title="删除"

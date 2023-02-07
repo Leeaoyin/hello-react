@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link, BrowserRouter, Route } from 'react-router-dom';
+import { NavLink,  Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
+import MyNavLink from './MyNavLink'
 
 export default class RouPapp extends Component {
   render() {
@@ -21,8 +22,8 @@ export default class RouPapp extends Component {
               {/* 在react中靠路由实现组件切换功能 */}
               {/* 不同的BrowserRouter不能相互通信，比如这里写了两个BrowserRouter就不能实现效果，要把所有元素包含在一个BrowserRouter中 */}
               {/* <BrowserRouter> */}
-              <Link className="list-group-item" to="/about">About</Link>
-              <Link className="list-group-item" to="/home">Home</Link>
+              <MyNavLink to="/about" name="About"/>
+              <MyNavLink  to="/home" name="Home"/>
               {/* </BrowserRouter> */}
 
             </div>
