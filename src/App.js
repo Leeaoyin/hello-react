@@ -4,6 +4,7 @@ import Header from './components/Header';
 import List from './components/List';
 import Footer from './components/Footer';
 import RouPapp from './components/pages';
+import { ConfigProvider } from 'antd';
 
 
 
@@ -66,17 +67,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* todolist begin */}
-        {/* <div className="todo-container">
-          <div className="todo-wrap">
-            <Header addTodo={this.addTodo} />
-            <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
-            <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone} />
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#F08080',
+            },
+          }}
+        >
+          {/* todolist begin */}
+          <div className="todo-container">
+            <div className="todo-wrap">
+              <Header addTodo={this.addTodo} />
+              <List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
+              <Footer todos={this.state.todos} checkedAll={this.checkedAll} clearAllDone={this.clearAllDone} />
+            </div>
           </div>
-        </div> */}
+        </ConfigProvider>
         {/* todolist end */}
-        
-        <RouPapp></RouPapp>
+
+        {/* <RouPapp></RouPapp> */}
       </div>
     )
   }

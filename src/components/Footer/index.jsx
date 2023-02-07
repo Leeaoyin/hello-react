@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'antd';
 
 export default class Footer extends Component {
   handleCheckAll = (e) => {
@@ -23,7 +24,7 @@ export default class Footer extends Component {
         <span>
           <span>已完成{doneCount}</span> / 全部{totleCount}
         </span>
-        <button className="btn btn-danger" onClick={this.clearAllDone}>清除已完成任务</button>
+        <Button onClick={this.clearAllDone}>清除已完成任务</Button>
       </div>
     )
   }

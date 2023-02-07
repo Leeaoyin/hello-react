@@ -32,7 +32,7 @@ export default class Item extends Component {
     const { id, name, done } = this.props;
     const { mouse } = this.state;
     return (
-      <li style={{ backgroundColor: mouse ? '#a1caf6' : 'white', color: mouse ? 'white' : 'black' }} onMouseLeave={this.handleMouse(false)} onMouseEnter={this.handleMouse(true)} >
+      <li  onMouseLeave={this.handleMouse(false)} onMouseEnter={this.handleMouse(true)} >
         <label>
           <input type="checkbox" checked={done ? true : false} onChange={this.handleChecked(id)} />
           <span>{name}</span>
@@ -47,7 +47,7 @@ export default class Item extends Component {
             okText="是"
             cancelText="否"
           >
-            <Button type="link" style={{ color: mouse ? 'red' : 'black' }}>删除</Button>
+            <Button type="primary">删除</Button>
           </Popconfirm>
         </div>
       </li>
