@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import MyNavLink from './MyNavLink'
@@ -33,8 +33,11 @@ export default class RouPapp extends Component {
               <div className="panel-body">
                 {/* 注册路由 */}
                 {/* <BrowserRouter> */}
-                <Route path="/about" component={About} />
-                <Route path="/home" component={Home} />
+                <Switch>
+                  {/* switch组件：当有多个组件路径匹配时，只展示第一个 */}
+                  <Route path="/about" component={About} />
+                  <Route path="/home" component={Home} />
+                </Switch>
                 {/* </BrowserRouter> */}
               </div>
             </div>
